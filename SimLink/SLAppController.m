@@ -8,6 +8,12 @@
 
 #import "SLAppController.h"
 
+@interface SLAppController ()
+
+- (void)statusItemClicked:(id)sender;
+
+@end
+
 @implementation SLAppController
 
 - (void)awakeFromNib
@@ -15,15 +21,21 @@
 	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
 
 	[_statusItem setTitle:@"SimLink"];
-	[_statusItem setMenu:_statusMenu];
 	[_statusItem setToolTip:@"BrainCookie"];
-	[_statusItem setHighlightMode:YES];
+	[_statusItem setTarget:self];
+	[_statusItem setAction:@selector(statusItemClicked:)];
 
 }
 
 - (IBAction)openPreferences:(id)sender
 {
 	NSLog(@"Preferences");
+}
+
+- (void)statusItemClicked:(id)sender
+{
+	NSLog(@"Test");
+	[_statusItem popUpStatusItemMenu:_statusMenu];
 }
 
 @end
