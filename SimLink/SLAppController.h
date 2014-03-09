@@ -14,6 +14,6 @@
 	NSStatusItem *_statusItem;
 }
 
-- (IBAction)hello:(id)sender;
+- (IBAction)openPreferences:(id)sender;
 
 @end

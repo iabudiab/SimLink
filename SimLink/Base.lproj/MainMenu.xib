@@ -20,12 +20,14 @@
         </customObject>
         <menu id="ECz-3p-uEk" userLabel="Status Item">
             <items>
-                <menuItem title="Hello" id="Vkf-nv-LYq">
+                <menuItem isSeparatorItem="YES" id="v4l-tm-FUd"/>
+                <menuItem title="Preferences" id="Vkf-nv-LYq">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="hello:" target="xXZ-jY-MBS" id="liW-UM-mxe"/>
+                        <action selector="openPreferences:" target="xXZ-jY-MBS" id="qh9-XQ-ox2"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="WZL-b5-NON"/>
                 <menuItem title="Quit" id="g3P-pC-ajx">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>

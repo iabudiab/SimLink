@@ -18,11 +18,12 @@
 	[_statusItem setMenu:_statusMenu];
 	[_statusItem setToolTip:@"BrainCookie"];
 	[_statusItem setHighlightMode:YES];
+
 }
 
-- (void)hello:(id)sender
+- (IBAction)openPreferences:(id)sender
 {
-	NSLog(@"Hi");
+	NSLog(@"Preferences");
 }
 
 @end
