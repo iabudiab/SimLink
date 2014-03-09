@@ -18,6 +18,7 @@
 		62268A0B18CCF711002591AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622689EA18CCF711002591AE /* Cocoa.framework */; };
 		62268A1318CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62268A1118CCF711002591AE /* InfoPlist.strings */; };
 		62268A1518CCF711002591AE /* SimLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1418CCF711002591AE /* SimLinkTests.m */; };
+		62268A2018CCFAE1002591AE /* SLAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1F18CCFAE1002591AE /* SLAppController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		62268A1018CCF711002591AE /* SimLinkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimLinkTests-Info.plist"; sourceTree = "<group>"; };
 		62268A1218CCF711002591AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		62268A1418CCF711002591AE /* SimLinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimLinkTests.m; sourceTree = "<group>"; };
+		62268A1E18CCFAE1002591AE /* SLAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppController.h; sourceTree = "<group>"; };
+		62268A1F18CCFAE1002591AE /* SLAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 			children = (
 				622689FC18CCF711002591AE /* SLAppDelegate.h */,
 				622689FD18CCF711002591AE /* SLAppDelegate.m */,
+				62268A1E18CCFAE1002591AE /* SLAppController.h */,
+				62268A1F18CCFAE1002591AE /* SLAppController.m */,
 				622689FF18CCF711002591AE /* MainMenu.xib */,
 				62268A0218CCF711002591AE /* Images.xcassets */,
 				622689F118CCF711002591AE /* Supporting Files */,
@@ -255,6 +260,7 @@
 			files = (
 				622689F718CCF711002591AE /* main.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
+				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
