@@ -9,10 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface SLAppController : NSObject
-{
-	IBOutlet NSMenu *_statusMenu;
-	NSStatusItem *_statusItem;
-}
 
 - (IBAction)openPreferences:(id)sender;
 

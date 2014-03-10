@@ -13,28 +13,6 @@
         <customObject id="-3" userLabel="Application"/>
         <customObject id="494" customClass="SLAppDelegate"/>
         <customObject id="420" customClass="NSFontManager"/>
-        <customObject id="xXZ-jY-MBS" customClass="SLAppController">
-            <connections>
-                <outlet property="_statusMenu" destination="ECz-3p-uEk" id="WFg-Ms-zol"/>
-            </connections>
-        </customObject>
-        <menu id="ECz-3p-uEk" userLabel="Status Item">
-            <items>
-                <menuItem isSeparatorItem="YES" id="v4l-tm-FUd"/>
-                <menuItem title="Preferences" id="Vkf-nv-LYq">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openPreferences:" target="xXZ-jY-MBS" id="qh9-XQ-ox2"/>
-                    </connections>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="WZL-b5-NON"/>
-                <menuItem title="Quit" id="g3P-pC-ajx">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="terminate:" target="-3" id="PyT-M1-P1Q"/>
-                    </connections>
-                </menuItem>
-            </items>
-        </menu>
+        <customObject id="xXZ-jY-MBS" customClass="SLAppController"/>
     </objects>
 </document>
