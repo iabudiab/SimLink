@@ -7,7 +7,7 @@
 //
 
 #import "SLAppController.h"
-#import "SLAppView.h"
+#import "SLMenuItem.h"
 #import "SLFilesUtils.h"
 
 @interface SLAppController ()
@@ -75,11 +75,9 @@
 	NSArray *applications = [[SLFilesUtils sharedInstance] subdirectoriesAtPath:applicationsPath];
 
 	for (NSString *applicationDirectory in applications) {
-		NSArray *appBundles = [[SLFilesUtils sharedInstance] contentsOfDirectoryAtPath:applicationDirectory ofType:@"app"];
+		NSArray *appBundles = [[SLFilesUtils sharedInstance] contentsOfDirectoryAtPath:applicationDirectory ofType:@"app" includeSymlinks:NO];
 		if (appBundles.count != 0) {
-			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[appBundles objectAtIndex:0] action:NULL keyEquivalent:@""];
-			NSString *appBundlePath = [applicationDirectory stringByAppendingPathComponent:[appBundles objectAtIndex:0]];
-			item.view = [[SLAppView alloc] initWithAppBundlePath:appBundlePath];
+			SLMenuItem *item = [[SLMenuItem alloc] initWithApplicationDirectoryPath:applicationDirectory];
 			[menu addItem:item];
 			[menu addItem:[NSMenuItem separatorItem]];
 		}

@@ -21,6 +21,7 @@
 		62268A1518CCF711002591AE /* SimLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1418CCF711002591AE /* SimLinkTests.m */; };
 		62268A2018CCFAE1002591AE /* SLAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1F18CCFAE1002591AE /* SLAppController.m */; };
 		622790DB18D10231004D630A /* SLFilesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 622790DA18D10231004D630A /* SLFilesUtils.m */; };
+		6259287D18D222E00090F696 /* SLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6259287C18D222E00090F696 /* SLMenuItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		62268A1F18CCFAE1002591AE /* SLAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppController.m; sourceTree = "<group>"; };
 		622790D918D10231004D630A /* SLFilesUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFilesUtils.h; sourceTree = "<group>"; };
 		622790DA18D10231004D630A /* SLFilesUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFilesUtils.m; sourceTree = "<group>"; };
+		6259287B18D222E00090F696 /* SLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMenuItem.h; sourceTree = "<group>"; };
+		6259287C18D222E00090F696 /* SLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMenuItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				622689FD18CCF711002591AE /* SLAppDelegate.m */,
 				62268A1E18CCFAE1002591AE /* SLAppController.h */,
 				62268A1F18CCFAE1002591AE /* SLAppController.m */,
+				6259287B18D222E00090F696 /* SLMenuItem.h */,
+				6259287C18D222E00090F696 /* SLMenuItem.m */,
 				62240E6E18CE68FD005AE1EE /* SLAppView.h */,
 				62240E6F18CE68FD005AE1EE /* SLAppView.m */,
 				622689FF18CCF711002591AE /* MainMenu.xib */,
@@ -270,6 +275,7 @@
 			files = (
 				622689F718CCF711002591AE /* main.m in Sources */,
 				622790DB18D10231004D630A /* SLFilesUtils.m in Sources */,
+				6259287D18D222E00090F696 /* SLMenuItem.m in Sources */,
 				62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
 				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,

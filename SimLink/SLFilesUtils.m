@@ -39,7 +39,7 @@
 	return list;
 }
 
-- (NSArray *)contentsOfDirectoryAtPath:(NSString *)path ofType:(NSString *)type
+- (NSArray *)contentsOfDirectoryAtPath:(NSString *)path ofType:(NSString *)type includeSymlinks:(BOOL)includeSymlinks
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 
@@ -52,10 +52,14 @@
 	for (NSURL *item in enumerator) {
 		if (![[item pathExtension] isEqualToString:type]) continue;
 
-		NSNumber *isSymbolicLink;
-		[item getResourceValue:&isSymbolicLink forKey:NSURLIsSymbolicLinkKey error:NULL];
+		if (includeSymlinks) {
+			[list addObject:item.path];
+		} else {
+			NSNumber *isSymbolicLink;
+			[item getResourceValue:&isSymbolicLink forKey:NSURLIsSymbolicLinkKey error:NULL];
 
-		if (![isSymbolicLink boolValue]) [list addObject:item.path];
+			if (![isSymbolicLink boolValue] ) [list addObject:item.path];
+		}
 	}
 	return list;
 }
