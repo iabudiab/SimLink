@@ -20,6 +20,7 @@
 		62268A1318CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62268A1118CCF711002591AE /* InfoPlist.strings */; };
 		62268A1518CCF711002591AE /* SimLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1418CCF711002591AE /* SimLinkTests.m */; };
 		62268A2018CCFAE1002591AE /* SLAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1F18CCFAE1002591AE /* SLAppController.m */; };
+		622790DB18D10231004D630A /* SLFilesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 622790DA18D10231004D630A /* SLFilesUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		62268A1418CCF711002591AE /* SimLinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimLinkTests.m; sourceTree = "<group>"; };
 		62268A1E18CCFAE1002591AE /* SLAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppController.h; sourceTree = "<group>"; };
 		62268A1F18CCFAE1002591AE /* SLAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppController.m; sourceTree = "<group>"; };
+		622790D918D10231004D630A /* SLFilesUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFilesUtils.h; sourceTree = "<group>"; };
+		622790DA18D10231004D630A /* SLFilesUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFilesUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,8 @@
 				62240E6E18CE68FD005AE1EE /* SLAppView.h */,
 				62240E6F18CE68FD005AE1EE /* SLAppView.m */,
 				622689FF18CCF711002591AE /* MainMenu.xib */,
+				622790D918D10231004D630A /* SLFilesUtils.h */,
+				622790DA18D10231004D630A /* SLFilesUtils.m */,
 				62268A0218CCF711002591AE /* Images.xcassets */,
 				622689F118CCF711002591AE /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				622689F718CCF711002591AE /* main.m in Sources */,
+				622790DB18D10231004D630A /* SLFilesUtils.m in Sources */,
 				62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
 				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,
@@ -477,6 +483,7 @@
 				62268A1A18CCF711002591AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62268A1B18CCF711002591AE /* Build configuration list for PBXNativeTarget "SimLinkTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +492,7 @@
 				62268A1D18CCF711002591AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

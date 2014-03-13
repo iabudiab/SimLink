@@ -7,6 +7,8 @@
 //
 
 #import "SLAppController.h"
+#import "SLAppView.h"
+#import "SLFilesUtils.h"
 
 @interface SLAppController ()
 {
@@ -19,9 +21,6 @@
 - (NSMenu *)menuForSimulatorPath:(NSString *)path;
 - (void)addSimulatorMenuItems;
 - (void)addDefaultMenuItems;
-
-- (NSArray *)subdirectoriesAtPath:(NSString *)path;
-- (NSArray *)contentsOfDirectoryAtPath:(NSString *)path ofType:(NSString *)type;
 
 @end
 
@@ -48,6 +47,8 @@
 
 - (void)statusItemClicked:(id)sender
 {
+	[_statusMenu removeAllItems];
+
 	[self addSimulatorMenuItems];
 	[self addDefaultMenuItems];
 
@@ -56,28 +57,31 @@
 
 - (void)addSimulatorMenuItems
 {
-	NSArray *simulatorVersions = [self subdirectoriesAtPath:_simulatorBasePath];
+	NSArray *simulatorVersions = [[SLFilesUtils sharedInstance] subdirectoriesAtPath:_simulatorBasePath];
 
-	[_statusMenu removeAllItems];
-	for (NSURL *simulator in simulatorVersions) {
-		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[simulator lastPathComponent] action:NULL keyEquivalent:@""];
-		[item setSubmenu:[self menuForSimulatorPath:simulator.path]];
-		[_statusMenu insertItem:item atIndex:0];
+	for (NSString *simulatorDirectory in simulatorVersions) {
+		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[simulatorDirectory lastPathComponent] action:NULL keyEquivalent:@""];
+		[item setSubmenu:[self menuForSimulatorPath:simulatorDirectory]];
+		[_statusMenu addItem:item];
 	}
 }
 
 - (NSMenu *)menuForSimulatorPath:(NSString *)path
 {
 	NSMenu *menu = [[NSMenu alloc] init];
+	[menu addItem:[NSMenuItem separatorItem]];
 
 	NSString *applicationsPath = [path stringByAppendingPathComponent:@"Applications"];
-	NSArray *applications = [self subdirectoriesAtPath:applicationsPath];
+	NSArray *applications = [[SLFilesUtils sharedInstance] subdirectoriesAtPath:applicationsPath];
 
-	for (NSURL *application in applications) {
-		NSArray *appBundles = [self contentsOfDirectoryAtPath:application.path ofType:@"app"];
+	for (NSString *applicationDirectory in applications) {
+		NSArray *appBundles = [[SLFilesUtils sharedInstance] contentsOfDirectoryAtPath:applicationDirectory ofType:@"app"];
 		if (appBundles.count != 0) {
 			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[appBundles objectAtIndex:0] action:NULL keyEquivalent:@""];
+			NSString *appBundlePath = [applicationDirectory stringByAppendingPathComponent:[appBundles objectAtIndex:0]];
+			item.view = [[SLAppView alloc] initWithAppBundlePath:appBundlePath];
 			[menu addItem:item];
+			[menu addItem:[NSMenuItem separatorItem]];
 		}
 	}
 
@@ -92,43 +96,6 @@
 	[_statusMenu addItem:preferencesItem];
 	[_statusMenu addItem:[NSMenuItem separatorItem]];
 	[_statusMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
-}
-
-- (NSArray *)subdirectoriesAtPath:(NSString *)path
-{
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-
-	NSDirectoryEnumerator *dirEnumerator  = [fileManager enumeratorAtURL:[NSURL fileURLWithPath:path]
-											  includingPropertiesForKeys:@[ NSURLNameKey, NSURLIsDirectoryKey ]
-																 options:NSDirectoryEnumerationSkipsSubdirectoryDescendants | NSDirectoryEnumerationSkipsHiddenFiles
-															errorHandler:nil];
-	NSMutableArray *dirList = [NSMutableArray array];
-	for (NSURL *dir in dirEnumerator) {
-		NSNumber *isDirectory;
-		[dir getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
-
-		if ([isDirectory boolValue]) [dirList addObject:dir];
-	}
-	return dirList;
-}
-
-- (NSArray *)contentsOfDirectoryAtPath:(NSString *)path ofType:(NSString *)type
-{
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-
-	NSArray *items = [fileManager contentsOfDirectoryAtPath:path error:nil];
-
-	NSMutableArray *appsList = [NSMutableArray array];
-
-	for (NSString *item in items) {
-		if (![[item pathExtension] isEqualToString:type]) continue;
-
-		NSDictionary *attributes = [fileManager attributesOfItemAtPath:[path stringByAppendingPathComponent:item] error:nil];
-		if ([attributes objectForKey:NSFileType] == NSFileTypeSymbolicLink) continue;
-
-		[appsList addObject:item];
-	}
-	return appsList;
 }
 
 @end
