@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62240E6F18CE68FD005AE1EE /* SLAppView.m */; };
 		622689EB18CCF711002591AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622689EA18CCF711002591AE /* Cocoa.framework */; };
 		622689F518CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 622689F318CCF711002591AE /* InfoPlist.strings */; };
 		622689F718CCF711002591AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622689F618CCF711002591AE /* main.m */; };
@@ -32,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62240E6E18CE68FD005AE1EE /* SLAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppView.h; sourceTree = "<group>"; };
+		62240E6F18CE68FD005AE1EE /* SLAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppView.m; sourceTree = "<group>"; };
 		622689E718CCF711002591AE /* SimLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		622689EA18CCF711002591AE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		622689ED18CCF711002591AE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				622689FD18CCF711002591AE /* SLAppDelegate.m */,
 				62268A1E18CCFAE1002591AE /* SLAppController.h */,
 				62268A1F18CCFAE1002591AE /* SLAppController.m */,
+				62240E6E18CE68FD005AE1EE /* SLAppView.h */,
+				62240E6F18CE68FD005AE1EE /* SLAppView.m */,
 				622689FF18CCF711002591AE /* MainMenu.xib */,
 				62268A0218CCF711002591AE /* Images.xcassets */,
 				622689F118CCF711002591AE /* Supporting Files */,
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				622689F718CCF711002591AE /* main.m in Sources */,
+				62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
 				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,
 			);
