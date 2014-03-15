@@ -60,6 +60,8 @@
 	NSArray *simulatorVersions = [[SLFilesUtils sharedInstance] subdirectoriesAtPath:_simulatorBasePath];
 
 	for (NSString *simulatorDirectory in simulatorVersions) {
+		if ([[simulatorDirectory lastPathComponent] isEqualToString:@"Library"]) continue;
+
 		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[simulatorDirectory lastPathComponent] action:NULL keyEquivalent:@""];
 		[item setSubmenu:[self menuForSimulatorPath:simulatorDirectory]];
 		[_statusMenu addItem:item];
