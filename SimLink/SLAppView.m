@@ -9,7 +9,7 @@
 #import "SLAppView.h"
 
 #define VIEW_FRAME		CGRectMake(0, 0, 320, 56)
-#define ICON_FRAME		CGRectMake(5, 0, 56, 56)
+#define ICON_FRAME		CGRectMake(5, 1, 54, 54)
 #define TITLE_FRAME		CGRectMake(80, 4, 230, 18)
 #define BUNDLE_FRAME	CGRectMake(80, 22, 230, 18)
 #define SIZE_FRAME		CGRectMake(80, 40, 230, 18)
@@ -21,9 +21,11 @@
 	NSTextField *_bundleView;
 	NSTextField *_sizeView;
 	NSTrackingArea *_trackingArea;
+	BOOL _highlighted;
 }
 
 - (void)applyTextViewSettings:(NSTextField *)field;
+- (void)applyTextViewsHighlightStatus;
 
 @end
 
@@ -76,14 +78,41 @@
 	[field.cell setLineBreakMode:NSLineBreakByTruncatingMiddle];
 }
 
+- (void)applyTextViewsHighlightStatus
+{
+	[_titleView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
+	[_bundleView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
+	[_sizeView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
+}
+
+#pragma mark - Mouse Events
+
+- (void)updateTrackingAreas
+{
+    if(_trackingArea != nil) {
+        [self removeTrackingArea:_trackingArea];
+    }
+
+    int opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways);
+    _trackingArea = [ [NSTrackingArea alloc] initWithRect:[self bounds]
+												  options:opts
+													owner:self
+												 userInfo:nil];
+    [self addTrackingArea:_trackingArea];
+}
+
 - (void)mouseEntered:(NSEvent *)theEvent
 {
-	NSLog(@"Enter");
+	_highlighted = YES;
+	[self applyTextViewsHighlightStatus];
+	[self setNeedsDisplay:YES];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent
 {
-	NSLog(@"Exit");
+	_highlighted = NO;
+	[self applyTextViewsHighlightStatus];
+	[self setNeedsDisplay:YES];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent
@@ -97,18 +126,16 @@
 	}
 }
 
-- (void)updateTrackingAreas
-{
-    if(_trackingArea != nil) {
-        [self removeTrackingArea:_trackingArea];
-    }
+#pragma mark - Drawing
 
-    int opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways);
-    _trackingArea = [ [NSTrackingArea alloc] initWithRect:[self bounds]
-                                                 options:opts
-                                                   owner:self
-                                                userInfo:nil];
-    [self addTrackingArea:_trackingArea];
+- (void)drawRect:(NSRect)rect;
+{
+    if (_highlighted) {
+        [[NSColor selectedMenuItemColor] set];
+        [NSBezierPath fillRect:rect];
+    } else {
+        [super drawRect: rect];
+    }
 }
 
 #pragma mark - Flip Coordinates
