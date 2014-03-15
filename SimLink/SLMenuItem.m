@@ -8,13 +8,14 @@
 
 #import "SLMenuItem.h"
 #import "SLAppView.h"
+#import "SLApplicationBundle.h"
 
 @interface SLMenuItem ()
 {
 	NSString *_applicationDirectory;
 }
 
-- (void)setup;
+- (void)setupWithPath:(NSString *)path;
 
 @end
 
@@ -24,15 +25,21 @@
 {
 	self = [super initWithTitle:@"" action:nil keyEquivalent:@""];
 	if (self) {
-		_applicationDirectory = path;
-		[self setup];
+		[self setupWithPath:path];
 	}
 	return self;
 }
 
-- (void)setup
+- (void)setupWithPath:(NSString *)path
 {
-	self.view = [[SLAppView alloc] initWithAppBundlePath:_applicationDirectory];
+	SLApplicationBundle *appBundle = [[SLApplicationBundle alloc] initWithApplicationDirectoryPath:path];
+
+	self.title = appBundle.name;
+	self.view = [[SLAppView alloc] initWithName:appBundle.name
+									 identifier:appBundle.identifier
+										version:appBundle.version
+										   size:appBundle.size
+										andIcon:appBundle.icon];
 }
 
 @end

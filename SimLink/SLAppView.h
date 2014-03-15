@@ -10,6 +10,10 @@
 
 @interface SLAppView : NSView
 
-- (id)initWithAppBundlePath:(NSString *)path;
+- (id)initWithName:(NSString *)name
+		identifier:(NSString *)identifier
+		   version:(NSString *)version
+			  size:(NSString *)size
+		   andIcon:(NSImage *)icon;
 
 @end
