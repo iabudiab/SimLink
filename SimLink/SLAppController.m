@@ -77,12 +77,9 @@
 	NSArray *applications = [[SLFilesUtils sharedInstance] subdirectoriesAtPath:applicationsPath];
 
 	for (NSString *applicationDirectory in applications) {
-		NSArray *appBundles = [[SLFilesUtils sharedInstance] contentsOfDirectoryAtPath:applicationDirectory ofType:@"app" includeSymlinks:NO];
-		if (appBundles.count != 0) {
-			SLMenuItem *item = [[SLMenuItem alloc] initWithApplicationDirectoryPath:applicationDirectory];
-			[menu addItem:item];
-			[menu addItem:[NSMenuItem separatorItem]];
-		}
+		SLMenuItem *item = [[SLMenuItem alloc] initWithApplicationDirectoryPath:applicationDirectory];
+		[menu addItem:item];
+		[menu addItem:[NSMenuItem separatorItem]];
 	}
 
 	return menu;
