@@ -20,6 +20,7 @@
 	NSTextField *_titleView;
 	NSTextField *_bundleView;
 	NSTextField *_sizeView;
+	NSTrackingArea *_trackingArea;
 }
 
 - (void)applyTextViewSettings:(NSTextField *)field;
@@ -73,6 +74,16 @@
 	[field.cell setLineBreakMode:NSLineBreakByTruncatingMiddle];
 }
 
+- (void)mouseEntered:(NSEvent *)theEvent
+{
+	NSLog(@"Enter");
+}
+
+- (void)mouseExited:(NSEvent *)theEvent
+{
+	NSLog(@"Exit");
+}
+
 - (void)mouseDown:(NSEvent *)theEvent
 {
 	if (([theEvent modifierFlags] & NSShiftKeyMask) == NSShiftKeyMask) {
@@ -83,6 +94,21 @@
 		[_delegate appView:self wasClickedWithKeyModifier:@""];
 	}
 }
+
+- (void)updateTrackingAreas
+{
+    if(_trackingArea != nil) {
+        [self removeTrackingArea:_trackingArea];
+    }
+
+    int opts = (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways);
+    _trackingArea = [ [NSTrackingArea alloc] initWithRect:[self bounds]
+                                                 options:opts
+                                                   owner:self
+                                                userInfo:nil];
+    [self addTrackingArea:_trackingArea];
+}
+
 - (BOOL)isFlipped
 {
 	return YES;
