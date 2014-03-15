@@ -10,7 +10,9 @@
 
 @interface SLApplicationBundle : NSObject
 
+@property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *version;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *size;

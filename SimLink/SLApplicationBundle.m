@@ -13,6 +13,7 @@
 {
 	NSString *_path;
 	NSString *_name;
+	NSString *_displayName;
 	NSString *_version;
 	NSString *_identifier;
 	NSString *_size;
@@ -25,7 +26,9 @@
 @end
 
 @implementation SLApplicationBundle
+@synthesize path = _path;
 @synthesize name = _name;
+@synthesize displayName = _displayName;
 @synthesize identifier = _identifier;
 @synthesize version = _version;
 @synthesize size = _size;
@@ -62,7 +65,8 @@
 
 	if (infoPlist == nil) return NO;
 
-	_name = [infoPlist objectForKey:@"CFBundleDisplayName"];
+	_name = [bundlePath lastPathComponent];
+	_displayName = [infoPlist objectForKey:@"CFBundleDisplayName"];
 	_identifier = [infoPlist objectForKey:@"CFBundleIdentifier"];
 	_version = [infoPlist objectForKey:@"CFBundleVersion"];
 	_size = [NSByteCountFormatter stringFromByteCount:[fileUtils sizeOfItemAtPath:bundlePath]
