@@ -64,4 +64,21 @@
 	return list;
 }
 
+- (BOOL)isItemSymlinkAtPath:(NSString *)path
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+
+	NSDictionary *attributes = [fileManager attributesOfItemAtPath:path error:nil];
+	return [attributes objectForKey:NSFileType] == NSFileTypeSymbolicLink;
+}
+
+- (unsigned long long)sizeOfItemAtPath:(NSString *)path
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+
+	NSDictionary *attributes = [fileManager attributesOfItemAtPath:[path stringByResolvingSymlinksInPath]
+															 error:nil];
+	return [attributes fileSize];
+}
+
 @end

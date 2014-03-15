@@ -15,5 +15,7 @@
 
 - (NSArray *)subdirectoriesAtPath:(NSString *)path;
 - (NSArray *)contentsOfDirectoryAtPath:(NSString *)path ofType:(NSString *)type includeSymlinks:(BOOL)includeSymlinks;
+- (BOOL)isItemSymlinkAtPath:(NSString *)path;
+- (unsigned long long)sizeOfItemAtPath:(NSString *)path;
 
 @end
