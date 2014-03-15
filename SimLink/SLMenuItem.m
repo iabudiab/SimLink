@@ -7,15 +7,16 @@
 //
 
 #import "SLMenuItem.h"
-#import "SLAppView.h"
+
 #import "SLApplicationBundle.h"
 
 @interface SLMenuItem ()
 {
-	NSString *_applicationDirectory;
+	SLApplicationBundle *_appBundle;
 }
 
 - (void)setupWithPath:(NSString *)path;
+- (void)openApplicationFolder:(id)sender;
 
 @end
 
@@ -23,7 +24,7 @@
 
 - (id)initWithApplicationDirectoryPath:(NSString *)path
 {
-	self = [super initWithTitle:@"" action:nil keyEquivalent:@""];
+	self = [super initWithTitle:@"" action:NULL keyEquivalent:@""];
 	if (self) {
 		[self setupWithPath:path];
 	}
@@ -32,14 +33,28 @@
 
 - (void)setupWithPath:(NSString *)path
 {
-	SLApplicationBundle *appBundle = [[SLApplicationBundle alloc] initWithApplicationDirectoryPath:path];
+	_appBundle = [[SLApplicationBundle alloc] initWithApplicationDirectoryPath:path];
 
-	self.title = appBundle.name;
-	self.view = [[SLAppView alloc] initWithName:appBundle.name
-									 identifier:appBundle.identifier
-										version:appBundle.version
-										   size:appBundle.size
-										andIcon:appBundle.icon];
+	self.title = _appBundle.displayName;
+	SLAppView *view = [[SLAppView alloc] initWithName:_appBundle.displayName
+										   identifier:_appBundle.identifier
+											  version:_appBundle.version
+												 size:_appBundle.size
+											  andIcon:_appBundle.icon];
+	view.delegate = self;
+	self.view = view;
+}
+
+- (void)openApplicationFolder:(id)sender
+{
+	NSString *path = [_appBundle.path stringByAppendingPathComponent:_appBundle.name];
+	NSURL *url = [NSURL fileURLWithPath:path];
+	[[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[  url ]];
+}
+
+- (void)appView:(SLAppView *)appView wasClickedWithKeyModifier:(NSString *)keyModifier
+{
+	[self openApplicationFolder:nil];
 }
 
 @end

@@ -8,12 +8,25 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol SLAppViewDelegate;
+
 @interface SLAppView : NSView
+{
+	__weak id<SLAppViewDelegate> _delegate;
+}
+
+@property (nonatomic, weak) id<SLAppViewDelegate> delegate;
 
 - (id)initWithName:(NSString *)name
 		identifier:(NSString *)identifier
 		   version:(NSString *)version
 			  size:(NSString *)size
 		   andIcon:(NSImage *)icon;
+
+@end
+
+@protocol SLAppViewDelegate <NSObject>
+
+- (void)appView:(SLAppView *)appView wasClickedWithKeyModifier:(NSString *)keyModifier;
 
 @end

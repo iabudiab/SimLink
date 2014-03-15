@@ -27,6 +27,7 @@
 @end
 
 @implementation SLAppView
+@synthesize delegate = _delegate;
 
 - (id)initWithName:(NSString *)name
 			identifier:(NSString *)identifier
@@ -72,6 +73,16 @@
 	[field.cell setLineBreakMode:NSLineBreakByTruncatingMiddle];
 }
 
+- (void)mouseDown:(NSEvent *)theEvent
+{
+	if (([theEvent modifierFlags] & NSShiftKeyMask) == NSShiftKeyMask) {
+		NSLog(@"Shift");
+	}
+
+	if ([_delegate respondsToSelector:@selector(appView:wasClickedWithKeyModifier:)]) {
+		[_delegate appView:self wasClickedWithKeyModifier:@""];
+	}
+}
 - (BOOL)isFlipped
 {
 	return YES;

@@ -7,8 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SLAppView.h"
 
-@interface SLMenuItem : NSMenuItem
+@interface SLMenuItem : NSMenuItem <SLAppViewDelegate>
 
 - (id)initWithApplicationDirectoryPath:(NSString *)path;
 
