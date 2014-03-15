@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SLAppController : NSObject
+@interface SLAppController : NSObject <NSMenuDelegate>
 
 - (IBAction)openPreferences:(id)sender;
 

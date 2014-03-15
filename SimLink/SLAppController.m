@@ -15,6 +15,8 @@
 	NSString *_simulatorBasePath;
 	NSMenu *_statusMenu;
 	NSStatusItem *_statusItem;
+
+	CFRunLoopObserverRef _menuObserver;
 }
 
 - (void)statusItemClicked:(id)sender;
@@ -31,9 +33,10 @@
 - (void)awakeFromNib
 {
 	_statusMenu = [[NSMenu alloc] init];
-	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+	_statusMenu.delegate = self;
 
-	[_statusItem setTitle:@"SimLink"];
+	_statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+	[_statusItem setTitle:@"SL"];
 	[_statusItem setToolTip:@"BrainCookie"];
 	[_statusItem setTarget:self];
 	[_statusItem setAction:@selector(statusItemClicked:)];
@@ -99,6 +102,33 @@
 	[_statusMenu addItem:preferencesItem];
 	[_statusMenu addItem:[NSMenuItem separatorItem]];
 	[_statusMenu addItemWithTitle:@"Quit" action:@selector(terminate:) keyEquivalent:@""];
+}
+
+- (void)updateMenu
+{
+	[NSEvent modifierFlags];
+}
+
+#pragma mark - NSMenu Delegate (NSMenuDelegate)
+
+- (void)menuWillOpen:(NSMenu *)menu
+{
+	if (_menuObserver == NULL) {
+        _menuObserver = CFRunLoopObserverCreateWithHandler(NULL, kCFRunLoopBeforeWaiting, true, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
+            [self updateMenu];
+        });
+
+        CFRunLoopAddObserver(CFRunLoopGetCurrent(), _menuObserver, kCFRunLoopCommonModes);
+    }
+}
+
+- (void)menuDidClose:(NSMenu *)menu
+{
+    if (_menuObserver != NULL) {
+        CFRunLoopObserverInvalidate(_menuObserver);
+        CFRelease(_menuObserver);
+        _menuObserver = NULL;
+    }
 }
 
 @end
