@@ -22,6 +22,8 @@
 
 @implementation SLMenuItem
 
+#pragma mark - Lifecycle
+
 - (id)initWithApplicationDirectoryPath:(NSString *)path
 {
 	self = [super initWithTitle:@"" action:NULL keyEquivalent:@""];
@@ -45,12 +47,16 @@
 	self.view = view;
 }
 
+#pragma mark - Actions
+
 - (void)openApplicationFolder:(id)sender
 {
 	NSString *path = [_appBundle.path stringByAppendingPathComponent:_appBundle.name];
 	NSURL *url = [NSURL fileURLWithPath:path];
 	[[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[  url ]];
 }
+
+#pragma mark - App View Delegate (SLAppViewDelegate)
 
 - (void)appView:(SLAppView *)appView wasClickedWithKeyModifier:(NSString *)keyModifier
 {

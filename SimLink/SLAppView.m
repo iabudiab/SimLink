@@ -30,6 +30,8 @@
 @implementation SLAppView
 @synthesize delegate = _delegate;
 
+#pragma mark - Lifecycle
+
 - (id)initWithName:(NSString *)name
 			identifier:(NSString *)identifier
 			   version:(NSString *)version
@@ -108,6 +110,8 @@
                                                 userInfo:nil];
     [self addTrackingArea:_trackingArea];
 }
+
+#pragma mark - Flip Coordinates
 
 - (BOOL)isFlipped
 {

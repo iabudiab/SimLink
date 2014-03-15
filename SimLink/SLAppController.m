@@ -26,6 +26,8 @@
 
 @implementation SLAppController
 
+#pragma mark - Lifecycle
+
 - (void)awakeFromNib
 {
 	_statusMenu = [[NSMenu alloc] init];
@@ -40,10 +42,14 @@
 	_simulatorBasePath = [[supportDirectoryPath objectAtIndex:0] stringByAppendingPathComponent:@"iPhone Simulator"];
 }
 
+#pragma mark - Preferences
+
 - (IBAction)openPreferences:(id)sender
 {
 	NSLog(@"Preferences");
 }
+
+#pragma mark - Menu
 
 - (void)statusItemClicked:(id)sender
 {
