@@ -66,13 +66,14 @@
 
 - (void)deleteApplicationFolder
 {
-	NSLog(@"Delete");
-	NSMenu *menu = self.menu;
+	if ([_appBundle isSystemApplication]) return;
 
+	[[NSFileManager defaultManager] removeItemAtPath:_appBundle.path error:nil];
+
+	NSMenu *menu = self.menu;
 	NSInteger index = [menu indexOfItem:self];
 	[menu removeItemAtIndex:index];
 	[menu removeItemAtIndex:index];
-
 	[self.menu update];
 }
 
