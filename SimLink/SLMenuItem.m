@@ -85,7 +85,7 @@
 
 #pragma mark - App View Delegate (SLMenuItemViewDelegate)
 
-- (void)appViewClicked:(SLMenuItemView *)appView
+- (void)menuItemViewClicked:(SLMenuItemView *)appView
 {
 	switch (_action) {
 		case SLMenuItemActionDefault:

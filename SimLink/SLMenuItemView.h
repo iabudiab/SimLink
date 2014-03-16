@@ -27,6 +27,6 @@
 
 @protocol SLMenuItemViewDelegate <NSObject>
 
-- (void)appViewClicked:(SLMenuItemView *)appView;
+- (void)menuItemViewClicked:(SLMenuItemView *)appView;
 
 @end

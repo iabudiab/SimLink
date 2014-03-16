@@ -117,8 +117,8 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-	if ([_delegate respondsToSelector:@selector(appViewClicked:)]) {
-		[_delegate appViewClicked:self];
+	if ([_delegate respondsToSelector:@selector(menuItemViewClicked:)]) {
+		[_delegate menuItemViewClicked:self];
 	}
 }
 
