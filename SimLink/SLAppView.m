@@ -80,9 +80,9 @@
 
 - (void)applyTextViewsHighlightStatus
 {
-	[_titleView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
-	[_bundleView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
-	[_sizeView setTextColor:_highlighted ? [NSColor whiteColor] : [NSColor blackColor]];
+	[_titleView setTextColor:_highlighted ? [NSColor selectedMenuItemTextColor] : [NSColor controlTextColor]];
+	[_bundleView setTextColor:_highlighted ? [NSColor selectedMenuItemTextColor] : [NSColor controlTextColor]];
+	[_sizeView setTextColor:_highlighted ? [NSColor selectedMenuItemTextColor] : [NSColor controlTextColor]];
 }
 
 #pragma mark - Mouse Events
