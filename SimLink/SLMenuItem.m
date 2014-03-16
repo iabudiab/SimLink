@@ -13,10 +13,13 @@
 @interface SLMenuItem ()
 {
 	SLApplicationBundle *_appBundle;
+	SLMenuItemAction _action;
 }
 
 - (void)setupWithPath:(NSString *)path;
-- (void)openApplicationFolder:(id)sender;
+- (void)openApplicationFolder;
+- (void)deleteApplicationFolder;
+- (void)runApplicationInSimulator;
 
 @end
 
@@ -49,18 +52,50 @@
 
 #pragma mark - Actions
 
-- (void)openApplicationFolder:(id)sender
+- (void)setCurrentAction:(NSNumber *)action
+{
+	_action = [action shortValue];
+}
+
+- (void)openApplicationFolder
 {
 	NSString *path = [_appBundle.path stringByAppendingPathComponent:_appBundle.name];
 	NSURL *url = [NSURL fileURLWithPath:path];
 	[[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[  url ]];
 }
 
+- (void)deleteApplicationFolder
+{
+	NSLog(@"Delete");
+	NSMenu *menu = self.menu;
+
+	NSInteger index = [menu indexOfItem:self];
+	[menu removeItemAtIndex:index];
+	[menu removeItemAtIndex:index];
+
+	[self.menu update];
+}
+
+- (void)runApplicationInSimulator
+{
+	NSLog(@"Run");
+}
+
 #pragma mark - App View Delegate (SLAppViewDelegate)
 
-- (void)appView:(SLAppView *)appView wasClickedWithKeyModifier:(NSString *)keyModifier
+- (void)appViewClicked:(SLAppView *)appView
 {
-	[self openApplicationFolder:nil];
+	switch (_action) {
+		case SLMenuItemActionDefault:
+			[self openApplicationFolder];
+			break;
+		case SLMenuItemActionDelete:
+			[self deleteApplicationFolder];
+			break;
+		case SLMenuItemActionRun:
+			[self runApplicationInSimulator];
+			break;
+	}
 }
 
 @end

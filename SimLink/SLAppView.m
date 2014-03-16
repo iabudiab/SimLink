@@ -117,12 +117,8 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-	if (([theEvent modifierFlags] & NSShiftKeyMask) == NSShiftKeyMask) {
-		NSLog(@"Shift");
-	}
-
-	if ([_delegate respondsToSelector:@selector(appView:wasClickedWithKeyModifier:)]) {
-		[_delegate appView:self wasClickedWithKeyModifier:@""];
+	if ([_delegate respondsToSelector:@selector(appViewClicked:)]) {
+		[_delegate appViewClicked:self];
 	}
 }
 

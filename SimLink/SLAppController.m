@@ -15,6 +15,7 @@
 	NSString *_simulatorBasePath;
 	NSMenu *_statusMenu;
 	NSStatusItem *_statusItem;
+	NSMutableArray *_appBundleMenuItems;
 
 	CFRunLoopObserverRef _menuObserver;
 }
@@ -43,6 +44,8 @@
 
 	NSArray *supportDirectoryPath = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 	_simulatorBasePath = [[supportDirectoryPath objectAtIndex:0] stringByAppendingPathComponent:@"iPhone Simulator"];
+
+	_appBundleMenuItems = [NSMutableArray new];
 }
 
 #pragma mark - Preferences
@@ -57,6 +60,7 @@
 - (void)statusItemClicked:(id)sender
 {
 	[_statusMenu removeAllItems];
+	[_appBundleMenuItems removeAllObjects];
 
 	[self addSimulatorMenuItems];
 	[self addDefaultMenuItems];
@@ -89,6 +93,7 @@
 		SLMenuItem *item = [[SLMenuItem alloc] initWithApplicationDirectoryPath:applicationDirectory];
 		[menu addItem:item];
 		[menu addItem:[NSMenuItem separatorItem]];
+		[_appBundleMenuItems addObject:item];
 	}
 
 	return menu;
@@ -106,7 +111,15 @@
 
 - (void)updateMenu
 {
-	[NSEvent modifierFlags];
+	NSUInteger flags = [NSEvent modifierFlags];
+	SLMenuItemAction action = SLMenuItemActionDefault;
+	if ( flags  == (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask) ) {
+		action = SLMenuItemActionDelete;
+	} else if ( flags == NSCommandKeyMask ) {
+		action = SLMenuItemActionRun;
+	}
+
+	[_appBundleMenuItems makeObjectsPerformSelector:@selector(setCurrentAction:) withObject:@(action)];
 }
 
 #pragma mark - NSMenu Delegate (NSMenuDelegate)

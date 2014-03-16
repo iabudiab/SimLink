@@ -27,6 +27,6 @@
 
 @protocol SLAppViewDelegate <NSObject>
 
-- (void)appView:(SLAppView *)appView wasClickedWithKeyModifier:(NSString *)keyModifier;
+- (void)appViewClicked:(SLAppView *)appView;
 
 @end
