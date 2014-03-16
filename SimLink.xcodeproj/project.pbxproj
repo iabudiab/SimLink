@@ -24,6 +24,7 @@
 		6259287D18D222E00090F696 /* SLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6259287C18D222E00090F696 /* SLMenuItem.m */; };
 		6268530C18D389DB0018FC4E /* SLApplicationBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268530B18D389DB0018FC4E /* SLApplicationBundle.m */; };
 		6268530E18D3B3D60018FC4E /* simulator.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6268530D18D3B3D60018FC4E /* simulator.icns */; };
+		628174D018D53398006C1847 /* SLSimulatorRemoteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,9 @@
 		6268530A18D389DB0018FC4E /* SLApplicationBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLApplicationBundle.h; sourceTree = "<group>"; };
 		6268530B18D389DB0018FC4E /* SLApplicationBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLApplicationBundle.m; sourceTree = "<group>"; };
 		6268530D18D3B3D60018FC4E /* simulator.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = simulator.icns; sourceTree = "<group>"; };
+		628174CD18D5336E006C1847 /* DTiPhoneSimulatorRemoteClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTiPhoneSimulatorRemoteClient.h; sourceTree = "<group>"; };
+		628174CE18D53398006C1847 /* SLSimulatorRemoteClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSimulatorRemoteClient.h; sourceTree = "<group>"; };
+		628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSimulatorRemoteClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 		622689F018CCF711002591AE /* SimLink */ = {
 			isa = PBXGroup;
 			children = (
+				628174CC18D53366006C1847 /* Simulator */,
 				622689FF18CCF711002591AE /* MainMenu.xib */,
 				622689FC18CCF711002591AE /* SLAppDelegate.h */,
 				622689FD18CCF711002591AE /* SLAppDelegate.m */,
@@ -182,6 +187,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		628174CC18D53366006C1847 /* Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				628174CD18D5336E006C1847 /* DTiPhoneSimulatorRemoteClient.h */,
+				628174CE18D53398006C1847 /* SLSimulatorRemoteClient.h */,
+				628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */,
+			);
+			name = Simulator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = SL;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = BrainCookie;
 				TargetAttributes = {
 					62268A0718CCF711002591AE = {
@@ -288,6 +303,7 @@
 				62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */,
 				6268530C18D389DB0018FC4E /* SLApplicationBundle.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
+				628174D018D53398006C1847 /* SLSimulatorRemoteClient.m in Sources */,
 				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,9 +435,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
 				INFOPLIST_FILE = "SimLink/SimLink-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -432,9 +451,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
 				INFOPLIST_FILE = "SimLink/SimLink-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

@@ -7,8 +7,8 @@
 //
 
 #import "SLMenuItem.h"
-
 #import "SLApplicationBundle.h"
+#import "SLSimulatorRemoteClient.h"
 
 @interface SLMenuItem ()
 {
@@ -79,7 +79,8 @@
 
 - (void)runApplicationInSimulator
 {
-	NSLog(@"Run");
+	NSString *path = [_appBundle.path stringByAppendingPathComponent:_appBundle.name];
+	[[SLSimulatorRemoteClient sharedClient] launchApplicationAtPath:[path stringByResolvingSymlinksInPath]];
 }
 
 #pragma mark - App View Delegate (SLAppViewDelegate)
