@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62240E6F18CE68FD005AE1EE /* SLAppView.m */; };
+		62240E7018CE68FD005AE1EE /* SLMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */; };
 		622689EB18CCF711002591AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622689EA18CCF711002591AE /* Cocoa.framework */; };
 		622689F518CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 622689F318CCF711002591AE /* InfoPlist.strings */; };
 		622689F718CCF711002591AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622689F618CCF711002591AE /* main.m */; };
@@ -38,8 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		62240E6E18CE68FD005AE1EE /* SLAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppView.h; sourceTree = "<group>"; };
-		62240E6F18CE68FD005AE1EE /* SLAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppView.m; sourceTree = "<group>"; };
+		62240E6E18CE68FD005AE1EE /* SLMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMenuItemView.h; sourceTree = "<group>"; };
+		62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMenuItemView.m; sourceTree = "<group>"; };
 		622689E718CCF711002591AE /* SimLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		622689EA18CCF711002591AE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		622689ED18CCF711002591AE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -144,8 +144,8 @@
 				62268A1F18CCFAE1002591AE /* SLAppController.m */,
 				6259287B18D222E00090F696 /* SLMenuItem.h */,
 				6259287C18D222E00090F696 /* SLMenuItem.m */,
-				62240E6E18CE68FD005AE1EE /* SLAppView.h */,
-				62240E6F18CE68FD005AE1EE /* SLAppView.m */,
+				62240E6E18CE68FD005AE1EE /* SLMenuItemView.h */,
+				62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */,
 				6268530A18D389DB0018FC4E /* SLApplicationBundle.h */,
 				6268530B18D389DB0018FC4E /* SLApplicationBundle.m */,
 				622790D918D10231004D630A /* SLFilesUtils.h */,
@@ -300,7 +300,7 @@
 				622689F718CCF711002591AE /* main.m in Sources */,
 				622790DB18D10231004D630A /* SLFilesUtils.m in Sources */,
 				6259287D18D222E00090F696 /* SLMenuItem.m in Sources */,
-				62240E7018CE68FD005AE1EE /* SLAppView.m in Sources */,
+				62240E7018CE68FD005AE1EE /* SLMenuItemView.m in Sources */,
 				6268530C18D389DB0018FC4E /* SLApplicationBundle.m in Sources */,
 				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
 				628174D018D53398006C1847 /* SLSimulatorRemoteClient.m in Sources */,

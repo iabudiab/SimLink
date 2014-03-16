@@ -1,5 +1,5 @@
 //
-//  SLAppView.h
+//  SLMenuItemView.h
 //  SimLink
 //
 //  Created by Iska on 10/03/14.
@@ -8,14 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@protocol SLAppViewDelegate;
+@protocol SLMenuItemViewDelegate;
 
-@interface SLAppView : NSView
+@interface SLMenuItemView : NSView
 {
-	__weak id<SLAppViewDelegate> _delegate;
+	__weak id<SLMenuItemViewDelegate> _delegate;
 }
 
-@property (nonatomic, weak) id<SLAppViewDelegate> delegate;
+@property (nonatomic, weak) id<SLMenuItemViewDelegate> delegate;
 
 - (id)initWithName:(NSString *)name
 		identifier:(NSString *)identifier
@@ -25,8 +25,8 @@
 
 @end
 
-@protocol SLAppViewDelegate <NSObject>
+@protocol SLMenuItemViewDelegate <NSObject>
 
-- (void)appViewClicked:(SLAppView *)appView;
+- (void)appViewClicked:(SLMenuItemView *)appView;
 
 @end

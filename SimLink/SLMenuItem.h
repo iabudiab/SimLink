@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "SLAppView.h"
+#import "SLMenuItemView.h"
 
 typedef enum {
 	SLMenuItemActionDefault	= 0,
@@ -15,7 +15,7 @@ typedef enum {
 	SLMenuItemActionDelete	= 2
 } SLMenuItemAction ;
 
-@interface SLMenuItem : NSMenuItem <SLAppViewDelegate>
+@interface SLMenuItem : NSMenuItem <SLMenuItemViewDelegate>
 
 - (id)initWithApplicationDirectoryPath:(NSString *)path;
 

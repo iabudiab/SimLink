@@ -41,7 +41,7 @@
 	_appBundle = [[SLApplicationBundle alloc] initWithApplicationDirectoryPath:path];
 
 	self.title = _appBundle.displayName;
-	SLAppView *view = [[SLAppView alloc] initWithName:_appBundle.displayName
+	SLMenuItemView *view = [[SLMenuItemView alloc] initWithName:_appBundle.displayName
 										   identifier:_appBundle.identifier
 											  version:_appBundle.version
 												 size:_appBundle.size
@@ -83,9 +83,9 @@
 	[[SLSimulatorRemoteClient sharedClient] launchApplicationAtPath:[path stringByResolvingSymlinksInPath]];
 }
 
-#pragma mark - App View Delegate (SLAppViewDelegate)
+#pragma mark - App View Delegate (SLMenuItemViewDelegate)
 
-- (void)appViewClicked:(SLAppView *)appView
+- (void)appViewClicked:(SLMenuItemView *)appView
 {
 	switch (_action) {
 		case SLMenuItemActionDefault:

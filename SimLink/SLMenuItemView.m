@@ -1,12 +1,12 @@
 //
-//  SLAppView.m
+//  SLMenuItemView.m
 //  SimLink
 //
 //  Created by Iska on 10/03/14.
 //  Copyright (c) 2014 BrainCookie. All rights reserved.
 //
 
-#import "SLAppView.h"
+#import "SLMenuItemView.h"
 
 #define VIEW_FRAME		CGRectMake(0, 0, 320, 56)
 #define ICON_FRAME		CGRectMake(5, 1, 54, 54)
@@ -14,7 +14,7 @@
 #define BUNDLE_FRAME	CGRectMake(80, 22, 230, 18)
 #define SIZE_FRAME		CGRectMake(80, 40, 230, 18)
 
-@interface SLAppView ()
+@interface SLMenuItemView ()
 {
 	NSImageView *_imageView;
 	NSTextField *_titleView;
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation SLAppView
+@implementation SLMenuItemView
 @synthesize delegate = _delegate;
 
 #pragma mark - Lifecycle
