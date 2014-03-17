@@ -30,7 +30,7 @@ SimLink v0.1:
 	* Implement proper application's icon parsing
 	* Implement xcassets parsing
 	* Implement a start dialog with possible simulator settings before launching an application
-	* Add Simulator configuration possibilityy
+	* Add Simulator configuration possibility
 * Further menu actions:
 	* Delete contents of Documents/Library folder
 	* View apllication's User Defaults stored in Preferences folder
