@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		62240E7018CE68FD005AE1EE /* SLMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */; };
+		622689EB18CCF711002591AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622689EA18CCF711002591AE /* Cocoa.framework */; };
+		622689F518CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 622689F318CCF711002591AE /* InfoPlist.strings */; };
+		622689F718CCF711002591AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 622689F618CCF711002591AE /* main.m */; };
+		622689FB18CCF711002591AE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 622689F918CCF711002591AE /* Credits.rtf */; };
+		622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 622689FD18CCF711002591AE /* SLAppDelegate.m */; };
+		62268A0118CCF711002591AE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 622689FF18CCF711002591AE /* MainMenu.xib */; };
+		62268A0318CCF711002591AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62268A0218CCF711002591AE /* Images.xcassets */; };
+		62268A0A18CCF711002591AE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62268A0918CCF711002591AE /* XCTest.framework */; };
+		62268A0B18CCF711002591AE /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 622689EA18CCF711002591AE /* Cocoa.framework */; };
+		62268A1318CCF711002591AE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62268A1118CCF711002591AE /* InfoPlist.strings */; };
+		62268A1518CCF711002591AE /* SimLinkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1418CCF711002591AE /* SimLinkTests.m */; };
+		62268A2018CCFAE1002591AE /* SLAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62268A1F18CCFAE1002591AE /* SLAppController.m */; };
+		622790DB18D10231004D630A /* SLFilesUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 622790DA18D10231004D630A /* SLFilesUtils.m */; };
+		6259287D18D222E00090F696 /* SLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6259287C18D222E00090F696 /* SLMenuItem.m */; };
+		6268530C18D389DB0018FC4E /* SLApplicationBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6268530B18D389DB0018FC4E /* SLApplicationBundle.m */; };
+		6268530E18D3B3D60018FC4E /* simulator.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6268530D18D3B3D60018FC4E /* simulator.icns */; };
+		628174D018D53398006C1847 /* SLSimulatorRemoteClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		62268A0C18CCF711002591AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 622689DF18CCF711002591AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 622689E618CCF711002591AE;
+			remoteInfo = SimLink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		62240E6E18CE68FD005AE1EE /* SLMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMenuItemView.h; sourceTree = "<group>"; };
+		62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMenuItemView.m; sourceTree = "<group>"; };
+		622689E718CCF711002591AE /* SimLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		622689EA18CCF711002591AE /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		622689ED18CCF711002591AE /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		622689EE18CCF711002591AE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		622689EF18CCF711002591AE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		622689F218CCF711002591AE /* SimLink-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimLink-Info.plist"; sourceTree = "<group>"; };
+		622689F418CCF711002591AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		622689F618CCF711002591AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		622689F818CCF711002591AE /* SimLink-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimLink-Prefix.pch"; sourceTree = "<group>"; };
+		622689FA18CCF711002591AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		622689FC18CCF711002591AE /* SLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLAppDelegate.h; sourceTree = "<group>"; };
+		622689FD18CCF711002591AE /* SLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLAppDelegate.m; sourceTree = "<group>"; };
+		62268A0018CCF711002591AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		62268A0218CCF711002591AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		62268A0818CCF711002591AE /* SimLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62268A0918CCF711002591AE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		62268A1018CCF711002591AE /* SimLinkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimLinkTests-Info.plist"; sourceTree = "<group>"; };
+		62268A1218CCF711002591AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		62268A1418CCF711002591AE /* SimLinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimLinkTests.m; sourceTree = "<group>"; };
+		62268A1E18CCFAE1002591AE /* SLAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLAppController.h; sourceTree = "<group>"; };
+		62268A1F18CCFAE1002591AE /* SLAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLAppController.m; sourceTree = "<group>"; };
+		622790D918D10231004D630A /* SLFilesUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLFilesUtils.h; sourceTree = "<group>"; };
+		622790DA18D10231004D630A /* SLFilesUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLFilesUtils.m; sourceTree = "<group>"; };
+		6259287B18D222E00090F696 /* SLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMenuItem.h; sourceTree = "<group>"; };
+		6259287C18D222E00090F696 /* SLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMenuItem.m; sourceTree = "<group>"; };
+		6268530A18D389DB0018FC4E /* SLApplicationBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLApplicationBundle.h; sourceTree = "<group>"; };
+		6268530B18D389DB0018FC4E /* SLApplicationBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLApplicationBundle.m; sourceTree = "<group>"; };
+		6268530D18D3B3D60018FC4E /* simulator.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = simulator.icns; sourceTree = "<group>"; };
+		628174CD18D5336E006C1847 /* DTiPhoneSimulatorRemoteClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTiPhoneSimulatorRemoteClient.h; sourceTree = "<group>"; };
+		628174CE18D53398006C1847 /* SLSimulatorRemoteClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLSimulatorRemoteClient.h; sourceTree = "<group>"; };
+		628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLSimulatorRemoteClient.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		622689E418CCF711002591AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622689EB18CCF711002591AE /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62268A0518CCF711002591AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62268A0B18CCF711002591AE /* Cocoa.framework in Frameworks */,
+				62268A0A18CCF711002591AE /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		622689DE18CCF711002591AE = {
+			isa = PBXGroup;
+			children = (
+				622689F018CCF711002591AE /* SimLink */,
+				62268A0E18CCF711002591AE /* SimLinkTests */,
+				622689E918CCF711002591AE /* Frameworks */,
+				622689E818CCF711002591AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		622689E818CCF711002591AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				622689E718CCF711002591AE /* SimLink.app */,
+				62268A0818CCF711002591AE /* SimLinkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		622689E918CCF711002591AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				622689EA18CCF711002591AE /* Cocoa.framework */,
+				62268A0918CCF711002591AE /* XCTest.framework */,
+				622689EC18CCF711002591AE /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		622689EC18CCF711002591AE /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				622689ED18CCF711002591AE /* AppKit.framework */,
+				622689EE18CCF711002591AE /* CoreData.framework */,
+				622689EF18CCF711002591AE /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		622689F018CCF711002591AE /* SimLink */ = {
+			isa = PBXGroup;
+			children = (
+				628174CC18D53366006C1847 /* Simulator */,
+				622689FF18CCF711002591AE /* MainMenu.xib */,
+				622689FC18CCF711002591AE /* SLAppDelegate.h */,
+				622689FD18CCF711002591AE /* SLAppDelegate.m */,
+				62268A1E18CCFAE1002591AE /* SLAppController.h */,
+				62268A1F18CCFAE1002591AE /* SLAppController.m */,
+				6259287B18D222E00090F696 /* SLMenuItem.h */,
+				6259287C18D222E00090F696 /* SLMenuItem.m */,
+				62240E6E18CE68FD005AE1EE /* SLMenuItemView.h */,
+				62240E6F18CE68FD005AE1EE /* SLMenuItemView.m */,
+				6268530A18D389DB0018FC4E /* SLApplicationBundle.h */,
+				6268530B18D389DB0018FC4E /* SLApplicationBundle.m */,
+				622790D918D10231004D630A /* SLFilesUtils.h */,
+				622790DA18D10231004D630A /* SLFilesUtils.m */,
+				62268A0218CCF711002591AE /* Images.xcassets */,
+				622689F118CCF711002591AE /* Supporting Files */,
+			);
+			path = SimLink;
+			sourceTree = "<group>";
+		};
+		622689F118CCF711002591AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6268530D18D3B3D60018FC4E /* simulator.icns */,
+				622689F218CCF711002591AE /* SimLink-Info.plist */,
+				622689F318CCF711002591AE /* InfoPlist.strings */,
+				622689F618CCF711002591AE /* main.m */,
+				622689F818CCF711002591AE /* SimLink-Prefix.pch */,
+				622689F918CCF711002591AE /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		62268A0E18CCF711002591AE /* SimLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				62268A1418CCF711002591AE /* SimLinkTests.m */,
+				62268A0F18CCF711002591AE /* Supporting Files */,
+			);
+			path = SimLinkTests;
+			sourceTree = "<group>";
+		};
+		62268A0F18CCF711002591AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				62268A1018CCF711002591AE /* SimLinkTests-Info.plist */,
+				62268A1118CCF711002591AE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		628174CC18D53366006C1847 /* Simulator */ = {
+			isa = PBXGroup;
+			children = (
+				628174CD18D5336E006C1847 /* DTiPhoneSimulatorRemoteClient.h */,
+				628174CE18D53398006C1847 /* SLSimulatorRemoteClient.h */,
+				628174CF18D53398006C1847 /* SLSimulatorRemoteClient.m */,
+			);
+			name = Simulator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		622689E618CCF711002591AE /* SimLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62268A1818CCF711002591AE /* Build configuration list for PBXNativeTarget "SimLink" */;
+			buildPhases = (
+				622689E318CCF711002591AE /* Sources */,
+				622689E418CCF711002591AE /* Frameworks */,
+				622689E518CCF711002591AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimLink;
+			productName = SimLink;
+			productReference = 622689E718CCF711002591AE /* SimLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		62268A0718CCF711002591AE /* SimLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 62268A1B18CCF711002591AE /* Build configuration list for PBXNativeTarget "SimLinkTests" */;
+			buildPhases = (
+				62268A0418CCF711002591AE /* Sources */,
+				62268A0518CCF711002591AE /* Frameworks */,
+				62268A0618CCF711002591AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				62268A0D18CCF711002591AE /* PBXTargetDependency */,
+			);
+			name = SimLinkTests;
+			productName = SimLinkTests;
+			productReference = 62268A0818CCF711002591AE /* SimLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		622689DF18CCF711002591AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = BrainCookie;
+				TargetAttributes = {
+					62268A0718CCF711002591AE = {
+						TestTargetID = 622689E618CCF711002591AE;
+					};
+				};
+			};
+			buildConfigurationList = 622689E218CCF711002591AE /* Build configuration list for PBXProject "SimLink" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 622689DE18CCF711002591AE;
+			productRefGroup = 622689E818CCF711002591AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				622689E618CCF711002591AE /* SimLink */,
+				62268A0718CCF711002591AE /* SimLinkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		622689E518CCF711002591AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622689F518CCF711002591AE /* InfoPlist.strings in Resources */,
+				6268530E18D3B3D60018FC4E /* simulator.icns in Resources */,
+				62268A0318CCF711002591AE /* Images.xcassets in Resources */,
+				622689FB18CCF711002591AE /* Credits.rtf in Resources */,
+				62268A0118CCF711002591AE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62268A0618CCF711002591AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62268A1318CCF711002591AE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		622689E318CCF711002591AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				622689F718CCF711002591AE /* main.m in Sources */,
+				622790DB18D10231004D630A /* SLFilesUtils.m in Sources */,
+				6259287D18D222E00090F696 /* SLMenuItem.m in Sources */,
+				62240E7018CE68FD005AE1EE /* SLMenuItemView.m in Sources */,
+				6268530C18D389DB0018FC4E /* SLApplicationBundle.m in Sources */,
+				622689FE18CCF711002591AE /* SLAppDelegate.m in Sources */,
+				628174D018D53398006C1847 /* SLSimulatorRemoteClient.m in Sources */,
+				62268A2018CCFAE1002591AE /* SLAppController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		62268A0418CCF711002591AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62268A1518CCF711002591AE /* SimLinkTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		62268A0D18CCF711002591AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 622689E618CCF711002591AE /* SimLink */;
+			targetProxy = 62268A0C18CCF711002591AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		622689F318CCF711002591AE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				622689F418CCF711002591AE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		622689F918CCF711002591AE /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				622689FA18CCF711002591AE /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		622689FF18CCF711002591AE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62268A0018CCF711002591AE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		62268A1118CCF711002591AE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				62268A1218CCF711002591AE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		62268A1618CCF711002591AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		62268A1718CCF711002591AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		62268A1918CCF711002591AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
+				INFOPLIST_FILE = "SimLink/SimLink-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		62268A1A18CCF711002591AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
+				INFOPLIST_FILE = "SimLink/SimLink-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		62268A1C18CCF711002591AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimLink.app/Contents/MacOS/SimLink";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SimLinkTests/SimLinkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		62268A1D18CCF711002591AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SimLink.app/Contents/MacOS/SimLink";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SimLink/SimLink-Prefix.pch";
+				INFOPLIST_FILE = "SimLinkTests/SimLinkTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		622689E218CCF711002591AE /* Build configuration list for PBXProject "SimLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62268A1618CCF711002591AE /* Debug */,
+				62268A1718CCF711002591AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62268A1818CCF711002591AE /* Build configuration list for PBXNativeTarget "SimLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62268A1918CCF711002591AE /* Debug */,
+				62268A1A18CCF711002591AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		62268A1B18CCF711002591AE /* Build configuration list for PBXNativeTarget "SimLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62268A1C18CCF711002591AE /* Debug */,
+				62268A1D18CCF711002591AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 622689DF18CCF711002591AE /* Project object */;
+}
