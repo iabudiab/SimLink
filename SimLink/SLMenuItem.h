@@ -12,7 +12,8 @@
 typedef enum {
 	SLMenuItemActionDefault	= 0,
 	SLMenuItemActionRun		= 1,
-	SLMenuItemActionDelete	= 2
+	SLMenuItemActionDelete	= 2,
+	SLMenuItemActionClearDoduments = 3
 } SLMenuItemAction ;
 
 @interface SLMenuItem : NSMenuItem <SLMenuItemViewDelegate>

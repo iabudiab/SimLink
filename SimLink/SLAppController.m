@@ -116,6 +116,8 @@
 	SLMenuItemAction action = SLMenuItemActionDefault;
 	if ( flags  == (NSCommandKeyMask | NSAlternateKeyMask | NSControlKeyMask) ) {
 		action = SLMenuItemActionDelete;
+	} else if ( flags  == (NSCommandKeyMask | NSAlternateKeyMask) ) {
+		action = SLMenuItemActionClearDoduments;
 	} else if ( flags == NSCommandKeyMask ) {
 		action = SLMenuItemActionRun;
 	}

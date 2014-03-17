@@ -19,6 +19,7 @@
 - (void)setupWithPath:(NSString *)path;
 - (void)openApplicationFolder;
 - (void)deleteApplicationFolder;
+- (void)clearApplicationDocumentsFolder;
 - (void)runApplicationInSimulator;
 
 @end
@@ -77,6 +78,22 @@
 	[self.menu update];
 }
 
+- (void)clearApplicationDocumentsFolder
+{
+	NSString *documentsPath = [_appBundle.path stringByAppendingPathComponent:@"Documents"];
+
+	NSDirectoryEnumerator *enumerator = [[NSFileManager defaultManager] enumeratorAtPath:documentsPath];
+
+	NSError *error = nil;
+	NSString *file;
+	while (file = [enumerator nextObject]) {
+		[[NSFileManager defaultManager] removeItemAtPath:[documentsPath stringByAppendingPathComponent:file] error:&error];
+		if (error) {
+			NSLog(@"Error removing item: %@", file);
+		}
+	}
+}
+
 - (void)runApplicationInSimulator
 {
 	NSString *path = [_appBundle.path stringByAppendingPathComponent:_appBundle.name];
@@ -93,6 +110,9 @@
 			break;
 		case SLMenuItemActionDelete:
 			[self deleteApplicationFolder];
+			break;
+		case SLMenuItemActionClearDoduments:
+			[self clearApplicationDocumentsFolder];
 			break;
 		case SLMenuItemActionRun:
 			[self runApplicationInSimulator];
