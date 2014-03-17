@@ -65,6 +65,7 @@
 	[self addSimulatorMenuItems];
 	[self addDefaultMenuItems];
 
+	[_statusItem setHighlightMode:YES];
 	[_statusItem popUpStatusItemMenu:_statusMenu];
 }
 
