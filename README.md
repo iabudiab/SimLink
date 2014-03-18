@@ -16,10 +16,12 @@ SimLink v0.1:
 
 ## Current Limitations
 
+* Launching in Simulator requires Xcode 5.1
 * Application's icon is hardcoded to use "icon@2x\~{ipad, iphone}.png"
 * Simulator SDK is hardcoded to use system default
 * Simulator Device Family is hardcoded to "iPad"
 * No handling for empty menus
+* Menu highlighting is bugged and needs optimising
 * System applications are always visible
 * System applications cannot be launched in Simulator
 
