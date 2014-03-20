@@ -92,6 +92,8 @@
 
 	for (NSString *applicationDirectory in applications) {
 		SLMenuItem *item = [[SLMenuItem alloc] initWithApplicationDirectoryPath:applicationDirectory];
+        if (item == nil) continue;
+
 		[menu addItem:item];
 		[menu addItem:[NSMenuItem separatorItem]];
 		[_appBundleMenuItems addObject:item];

@@ -16,7 +16,7 @@
 	SLMenuItemAction _action;
 }
 
-- (void)setupWithPath:(NSString *)path;
+- (BOOL)setupWithPath:(NSString *)path;
 - (void)openApplicationFolder;
 - (void)deleteApplicationFolder;
 - (void)clearApplicationDocumentsFolder;
@@ -32,14 +32,16 @@
 {
 	self = [super initWithTitle:@"" action:NULL keyEquivalent:@""];
 	if (self) {
-		[self setupWithPath:path];
+		if (![self setupWithPath:path]) return nil;
 	}
 	return self;
 }
 
-- (void)setupWithPath:(NSString *)path
+- (BOOL)setupWithPath:(NSString *)path
 {
 	_appBundle = [[SLApplicationBundle alloc] initWithApplicationDirectoryPath:path];
+
+    if (_appBundle == nil) return NO;
 
 	self.title = _appBundle.displayName;
 	SLMenuItemView *view = [[SLMenuItemView alloc] initWithName:_appBundle.displayName
@@ -49,6 +51,8 @@
 											  andIcon:_appBundle.icon];
 	view.delegate = self;
 	self.view = view;
+
+    return YES;
 }
 
 #pragma mark - Actions
